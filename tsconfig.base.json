@@ -62,6 +62,7 @@
       "@rx-angular/template/experimental/viewport-prio": [
         "libs/template/experimental/viewport-prio/src/index.ts"
       ],
+      "@rx-angular/template/chunk": ["libs/template/chunk/src/index.ts"],
       "@rx-angular/template/let": ["libs/template/let/src/index.ts"],
       "@rx-angular/template/push": ["libs/template/push/src/index.ts"],
       "@rx-angular/template/unpatch": ["libs/template/unpatch/src/index.ts"],
