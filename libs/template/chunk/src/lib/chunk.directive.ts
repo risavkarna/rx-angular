@@ -143,9 +143,6 @@ export class ChunkDirective implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    if (this.suspense) {
-      this.createView(this.suspense);
-    }
     this.subscription = this.strategyProvider
       .schedule(
         () => {
@@ -159,6 +156,11 @@ export class ChunkDirective implements OnInit, OnDestroy {
         }
       )
       .subscribe(() => this._renderObserver?.next());
+    // do not create suspense template when strategy was sync and there already
+    // is a template
+    if (this.suspense && this.viewContainer.length === 0) {
+      this.createView(this.suspense);
+    }
   }
 
   ngOnDestroy() {
