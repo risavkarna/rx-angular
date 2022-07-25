@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { ChunkModule } from '../chunk.module';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'chunk-test',
   template: `
     <div
